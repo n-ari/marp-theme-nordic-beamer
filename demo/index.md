@@ -1,13 +1,13 @@
 ---
-theme: nordish-beamer
+theme: nordic-beamer
 paginate: true
 header: 'Header space'
 footer: 'Footer space'
-title: 'marp-theme-nordish-beamer demo slide'
+title: 'marp-theme-nordic-beamer demo slide'
 ---
 
 <!-- _class: title -->
-# marp-theme-nordish-beamer
+# marp-theme-nordic-beamer
 
 ## Marp theme,
 ## with Beamer-like components,
@@ -17,16 +17,16 @@ created by @n-ari.
 
 ---
 
-# marp-theme-nordish-beamer とは
+# marp-theme-nordic-beamer とは
 
-marp-theme-nordish-beamer とは、Marp の default テーマをベースとし、Beamer で使われるブロック等を導入した、Nord ライクな配色のテーマ・エンジンです。
+marp-theme-nordic-beamer とは、Marp の default テーマをベースとし、Beamer で使われるブロック等を導入した、Nord ライクな配色のテーマ・エンジンです。
 Marp を拡張し、ブロック等を導入することで、ゼミなどで使いやすくしています。
 
 ## 使い方
 
 ```sh
-$ git clone https://github.com/n-ari/marp-theme-nordish-beamer
-$ cd marp-theme-nordish-beamer
+$ git clone https://github.com/n-ari/marp-theme-nordic-beamer
+$ cd marp-theme-nordic-beamer
 $ yarn
 $ npx @marp-team/marp-cli --server ./slides
 ```
