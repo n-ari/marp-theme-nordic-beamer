@@ -3,10 +3,10 @@
     "@marp-team/marp-core": "^1.1.1",
     "markdown-it-container": "^2.0.0"
   },
-  "name": "marp-theme-nordish-beamer",
+  "name": "marp-theme-nordic-beamer",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:n-ari/marp-theme-nordish-beamer.git",
+  "repository": "git@github.com:n-ari/marp-theme-nordic-beamer.git",
   "author": "n-ari <fukunari.r.aa@m.titech.ac.jp>",
   "license": "MIT"
 }

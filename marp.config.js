@@ -52,7 +52,7 @@ module.exports = {
     ];
     const theme = marp.themeSet.add(marp.themeSet.pack("default", {
       after: `
-        /* @theme nordish-beamer */
+        /* @theme nordic-beamer */
 
         /* header, footer, paginate */
         header, footer, section::after {
