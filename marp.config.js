@@ -6,11 +6,11 @@ module.exports = {
     const marp = new Marp(opts);
 
     // plugins
-    const addContainerBox = (marp, className, modify = x => x) => {
-      const re = new RegExp(`^${className}:?(.*)$`);
-      const boxClass = `container-box ${className === "container" ? "" : className}`;
-      const headClass = `container-head ${className === "container" ? "" : className + "-head"}`;
-      marp.use(markdownItContainer, className, {
+    const addContainerBox = (marp, tagName, className, modify = x => x) => {
+      const re = new RegExp(`^${tagName}:?(.*)$`);
+      const boxClass = `block ${className === "block" ? "" : className}`;
+      const headClass = `block-head ${className === "block" ? "" : className + "-head"}`;
+      marp.use(markdownItContainer, tagName, {
         validate: (params) => {
           return params.trim().match(re);
         },
@@ -30,10 +30,14 @@ module.exports = {
         }
       });
     };
-    addContainerBox(marp, "container");
-    addContainerBox(marp, "info", name => name || "info");
-    addContainerBox(marp, "warn", name => name || "warn");
-    addContainerBox(marp, "theorem", name => "定理" + (name === "" ? "" : " ") + name + ".");
+    addContainerBox(marp, "block", "block");
+    addContainerBox(marp, "black", "block");
+    addContainerBox(marp, "info", "info", name => name || "info");
+    addContainerBox(marp, "blue", "info", name => name || "info");
+    addContainerBox(marp, "warn", "warn", name => name || "warn");
+    addContainerBox(marp, "red", "warn", name => name || "warn");
+
+    addContainerBox(marp, "theorem", "info", name => "定理" + (name === "" ? "" : " ") + name + ".");
 
     // style
     const nord = [
@@ -48,45 +52,109 @@ module.exports = {
     ];
     const theme = marp.themeSet.add(marp.themeSet.pack("default", {
       after: `
-        /* @theme nari-default */
-        header, footer, section:after {
+        /* @theme nordish-beamer */
+
+        /* header, footer, paginate */
+        header, footer, section::after {
           color: ${nord[0]};
           font-size: 22px;
+          position: absolute;
+          top: auto;
+          bottom: 18px;
         }
+        header {
+          left: 30px;
+        }
+        footer {
+          left: 500px;
+        }
+        section::after {
+          right: 30px;
+        }
+
+        /* default slide */
         section {
           justify-content: start;
           padding: 50px;
-          padding-top: 70px;
+          padding-top: 100px;
           line-height: 1.2;
         }
         section details, section dl, section ol, section p,
         section pre, section table, section ul {
           margin-bottom: 10px;
         }
+        section > h1:first-child, section > h1:nth-child(2) {
+          position: absolute;
+          width: 1280px;
+          height: 75px;
+          margin: 0;
+          padding-top: 5px;
+          padding-left: 30px;
+          top: 0;
+          left: 0;
+          background-color: ${nord[0]};
+          color: ${nord[6]};
+        }
+        section > h1:first-child + *, section > h1:nth-child(2) + * {
+          margin-top: 0;
+        }
 
-        /* container */
+        /* class: title */
+        section.title {
+          border: solid 1px black;
+          padding-top: 420px;
+          text-align: center;
+        }
+        section.title > h1 {
+          position: absolute;
+          width: 1280px;
+          font-size: 72px;
+          top: auto;
+          bottom: 300px;
+          left: 0;
+          height: 200px;
+          margin: 0;
+          padding-left: 0;
+          padding-right: 0;
+          background-color: ${nord[0]};
+          color: ${nord[6]};
+        }
+        section.title > h2 {
+          margin-bottom: 0;
+          padding-bottom: 0;
+        }
+        section.title > h2 + h2 {
+          margin-top: 0;
+        }
+        section.title > h2 + * {
+          margin-top: 10px;
+        }
+        section.title::after, section.title > header, section.title > footer {
+          display: none;
+        }
 
-        .container-box {
+        /* block */
+        .block {
           background-color: ${nord[4]};
           margin-top: 10px;
           margin-bottom: 10px;
           border-radius: 20px;
         }
-        .container-box > p {
+        .block > p {
           padding-left: 10px;
           padding-right: 10px;
         }
-        .container-box > p:first-child {
+        .block > p:first-child {
           padding-top: 10px;
         }
-        .container-head {
+        .block-head {
           padding-top: 5px !important;
           background-color: ${nord[0]};
           color: ${nord[6]};
           border-radius: 15px 15px 0 0;
           margin-bottom: 4px;
         }
-        .theorem-head, .info-head {
+        .info-head {
           background-color: ${nord[10]};
         }
         .warn-head {
