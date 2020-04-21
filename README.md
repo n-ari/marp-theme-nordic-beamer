@@ -13,5 +13,5 @@ $ npx @marp-team/marp-cli --server ./slides
 
 ## Example
 
-See `slides/demo.md`.
+See `slides/demo.md`, or [built demo slide on GitHub pages](https://n-ari.github.io/marp-theme-nordish-beamer/demo.html).
 
