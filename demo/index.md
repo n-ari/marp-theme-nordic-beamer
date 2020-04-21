@@ -38,7 +38,7 @@ $ npx @marp-team/marp-cli --server ./slides
 
 # デモスライド
 
-:::theorem:1(オイラーの定理)
+:::info:定理 1(オイラーの定理).
 $n$ を正の整数とする。$a$ を $n$ と互いに素な正の整数とする。このとき、
 $$a^{\varphi(n)} \equiv 1 \pmod n$$
 が成り立つ。ただしここで、$\varphi(n)$ はオイラーのトーシェント関数である。
