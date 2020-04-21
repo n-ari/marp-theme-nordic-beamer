@@ -1,6 +1,6 @@
 # marp-theme-nordic-beamer
 
-Marp theme, with Beamer-like components, and Nord-like color scheme.
+[Marp](https://marp.app/) theme, with [Beamer](https://ctan.org/pkg/beamer)-like components, and [Nord](https://www.nordtheme.com/)-like color scheme.
 
 ## Usage
 
