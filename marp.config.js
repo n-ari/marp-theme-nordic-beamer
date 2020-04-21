@@ -37,8 +37,6 @@ module.exports = {
     addContainerBox(marp, "warn", "warn", name => name || "warn");
     addContainerBox(marp, "red", "warn", name => name || "warn");
 
-    addContainerBox(marp, "theorem", "info", name => "定理" + (name === "" ? "" : " ") + name + ".");
-
     // style
     const nord = [
       // Polar Night
