@@ -3,7 +3,10 @@ const markdownItContainer = require("markdown-it-container");
 
 module.exports = {
   engine: (opts) => {
-    const marp = new Marp(opts);
+    const marp = new Marp({
+      ...opts,
+      html: true
+    });
 
     // plugins
     const addContainerBox = (marp, tagName, className, modify = x => x) => {
