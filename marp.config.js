@@ -62,15 +62,28 @@ module.exports = {
           position: absolute;
           top: auto;
           bottom: 18px;
+          white-space: nowrap;
         }
         header {
           left: 30px;
         }
         footer {
-          left: 500px;
+          left: 600px;
         }
         section::after {
           right: 30px;
+        }
+        section > p > img {
+          display: block;
+          margin: 0 auto;
+        }
+        section.image-left > p > img {
+          margin-right: auto;
+          margin-left: 0;
+        }
+        section.image-right > p > img {
+          margin-left: auto;
+          margin-right: 0;
         }
 
         /* default slide */
@@ -113,7 +126,8 @@ module.exports = {
           top: auto;
           bottom: 300px;
           left: 0;
-          height: 200px;
+          height: auto;
+          min-height: 180px;
           margin: 0;
           padding-left: 0;
           padding-right: 0;
