@@ -58,24 +58,26 @@ $$a^{\varphi(n)} \equiv 1 \pmod n$$
 <!-- footer: '' -->
 # ブロック構文 (markdown-it-container による拡張)
 
+
+
 :::info
-インフォブロック
+インフォブロック :information_source:
 Block for Information (info / blue)
 :::
 ```md
 :::info
-インフォブロック
+インフォブロック :information_source:
 Block for Information (info / blue)
 :::
 ```
 
 :::warn:Warning
-ワーニングブロック
+ワーニングブロック :warning:
 Block for Warning (warn / red)
 :::
 ```md
 :::warn:Warning
-ワーニングブロック
+ワーニングブロック :warning:
 Block for Warning (warn / red)
 :::
 ```

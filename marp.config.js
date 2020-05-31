@@ -5,7 +5,7 @@ module.exports = {
   engine: (opts) => {
     const marp = new Marp({
       ...opts,
-      html: true
+      html: true,
     });
 
     // plugins
