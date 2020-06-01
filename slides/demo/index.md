@@ -112,11 +112,24 @@ Block only (block / black)
 
 ---
 
-<!-- header: 'emoji' -->
+<!-- header: 'emoji / markdown-it-plugins' -->
 <!-- footer: '' -->
-# emoji
+# emoji / markdown-it-plugins
 
-本家 Marp 同様、twemoji による emoji が使えます :tada:
+本家 Marp 同様、twemoji による emoji が使えます :tada: :innocent:
+
+<hr>
+
+また、`markdown-it-sup, markdown-it-sub` による拡張構文も利用できます。
+
+例えば、\[Ag(NH~3~)~2~\]^+^ のようなものを $\TeX$ 記法無しで書くことが可能です^1^。
+
+`markdown-it-sup` による上付き表記と、`markdown-it-container` によって定義された `:::footnote` ブロックの併用により、脚注の表記も可能です^2^。
+
+:::footnote
+1. これはジアンミン銀(I)イオンです。
+2. `markdown-it-footnote` は現在挙動を確認中です。
+:::
 
 ---
 
