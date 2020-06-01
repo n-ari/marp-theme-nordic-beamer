@@ -45,11 +45,15 @@ $ npx @marp-team/marp-cli --server ./slides
 :::info:定理 1(オイラーの定理).
 $n$ を正の整数とする。$a$ を $n$ と互いに素な正の整数とする。このとき、
 $$a^{\varphi(n)} \equiv 1 \pmod n$$
-が成り立つ。ただしここで、$\varphi(n)$ はオイラーのトーシェント関数である。
+が成り立つ。ただしここで、$\varphi(n)$ はオイラーのトーシェント関数である^†^。
 :::
 
 :::warn:注意
 オイラーのトーシェント関数 $\varphi(n)$ は、$a^x\equiv 1\pmod n$ なる $x$ として最小のものを与えるわけではない。最小のものを与える関数としてカーマイケル関数 $\lambda(n)$ が存在し、これを **カーマイケルの定理** と呼ぶ。
+:::
+
+:::footnote
+†: 特に素数 $p,q$ を用いて $n=pq$ である時、$\varphi(n) = (p-1)(q-1)$ である。
 :::
 
 ---
@@ -59,23 +63,23 @@ $$a^{\varphi(n)} \equiv 1 \pmod n$$
 # ブロック構文 (markdown-it-container による拡張)
 
 :::info
-インフォブロック
+インフォブロック :information_source:
 Block for Information (info / blue)
 :::
 ```md
 :::info
-インフォブロック
+インフォブロック :information_source:
 Block for Information (info / blue)
 :::
 ```
 
 :::warn:Warning
-ワーニングブロック
+ワーニングブロック :warning:
 Block for Warning (warn / red)
 :::
 ```md
 :::warn:Warning
-ワーニングブロック
+ワーニングブロック :warning:
 Block for Warning (warn / red)
 :::
 ```
@@ -105,6 +109,27 @@ Block only (block / black)
 Block only (block / black)
 :::
 ```
+
+---
+
+<!-- header: 'emoji / markdown-it-plugins' -->
+<!-- footer: '' -->
+# emoji / markdown-it-plugins
+
+本家 Marp 同様、twemoji による emoji が使えます :tada: :innocent:
+
+<hr>
+
+また、`markdown-it-sup, markdown-it-sub` による拡張構文も利用できます。
+
+例えば、\[Ag(NH~3~)~2~\]^+^ のようなものを $\TeX$ 記法無しで書くことが可能です^1^。
+
+`markdown-it-sup` による上付き表記と、`markdown-it-container` によって定義された `:::footnote` ブロックの併用により、脚注の表記も可能です^2^。
+
+:::footnote
+1. これはジアンミン銀(I)イオンです。
+2. `markdown-it-footnote` は現在挙動を確認中です。
+:::
 
 ---
 
