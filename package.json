@@ -1,7 +1,9 @@
 {
   "dependencies": {
     "@marp-team/marp-core": "^1.1.1",
-    "markdown-it-container": "^2.0.0"
+    "markdown-it-container": "^2.0.0",
+    "markdown-it-sub": "^1.0.0",
+    "markdown-it-sup": "^1.0.0"
   },
   "name": "marp-theme-nordic-beamer",
   "version": "1.0.0",

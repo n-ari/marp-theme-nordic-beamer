@@ -1,5 +1,7 @@
 const {Marp} = require("@marp-team/marp-core");
 const markdownItContainer = require("markdown-it-container");
+const markdownItSup = require("markdown-it-sup");
+const markdownItSub = require("markdown-it-sub");
 
 module.exports = {
   engine: (opts) => {
@@ -9,6 +11,9 @@ module.exports = {
     });
 
     // plugins
+    marp.use(markdownItSup);
+    marp.use(markdownItSub);
+    /// containers
     const addContainerBox = (marp, tagName, className, modify = x => x) => {
       const re = new RegExp(`^${tagName}:?(.*)$`);
       const boxClass = `block ${className === "block" ? "" : className}`;
