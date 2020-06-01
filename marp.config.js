@@ -39,6 +39,7 @@ module.exports = {
     addContainerBox(marp, "blue", "info", name => name || "info");
     addContainerBox(marp, "warn", "warn", name => name || "warn");
     addContainerBox(marp, "red", "warn", name => name || "warn");
+    addContainerBox(marp, "footnote", "footnote");
 
     // style
     const nord = [
@@ -149,17 +150,17 @@ module.exports = {
         }
 
         /* block */
-        .block {
+        .block:not(.footnote) {
           background-color: ${nord[4]};
           margin-top: 10px;
           margin-bottom: 10px;
           border-radius: 20px;
         }
-        .block > p {
+        .block:not(.footnote) > p {
           padding-left: 10px;
           padding-right: 10px;
         }
-        .block > p:first-child {
+        .block:not(.footnote) > p:first-child {
           padding-top: 10px;
         }
         .block-head {
@@ -174,6 +175,12 @@ module.exports = {
         }
         .warn-head {
           background-color: ${nord[11]};
+        }
+        .footnote {
+          position: absolute;
+          bottom: 40px;
+          font-size: 0.7em;
+          color: ${nord[2]};
         }
       `,
     }));
