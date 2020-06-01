@@ -73,15 +73,15 @@ module.exports = {
         section::after {
           right: 30px;
         }
-        section > p > img {
+        section > p > img:not(.emoji) {
           display: block;
           margin: 0 auto;
         }
-        section.image-left > p > img {
+        section.image-left > p > img:not(.emoji) {
           margin-right: auto;
           margin-left: 0;
         }
-        section.image-right > p > img {
+        section.image-right > p > img:not(.emoji) {
           margin-left: auto;
           margin-right: 0;
         }

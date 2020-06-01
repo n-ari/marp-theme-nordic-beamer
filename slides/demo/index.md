@@ -110,6 +110,14 @@ Block only (block / black)
 
 ---
 
+<!-- header: 'emoji' -->
+<!-- footer: '' -->
+# emoji
+
+本家 Marp 同様、twemoji による emoji が使えます :tada:
+
+---
+
 <!-- header: '画像' -->
 <!-- footer: 'class: (default)' -->
 # 画像
